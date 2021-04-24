@@ -117,3 +117,4 @@ The payoff:
 We will need this sort of HashMap support to make graph manupulation algorithm perform efficiently when we build a graph data structure in Assn 5. We will need to find components of a graph in O(1) time instead of searching through a list of N elements. In this HashHeap assignment, the HashMap helps us keep a O(N) operation down to O(log N)... which is good to do, but not a killer if we have to do the O(N) search instead. In the graph applications, the HashMap will help up have O(N) and O(N log N) operations instead of O(N^2) or worse. This then becomes crucial rather than just nice.
 
 **_Hopefully helpful diagram_**
+[!alt text](https://github.com/ckong6953/COMP410/blob/main/ckong727_assignment4/hashheap.png)
