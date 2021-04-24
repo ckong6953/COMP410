@@ -10,22 +10,22 @@ There is a built-in hash function in Java but do not use it here. I want you to 
 
 In our program, we will have one object (class) as "the HashMap". We will call the various MAP interface functions such as put, get, hasKey, extend, etc. on that object. The operations in a hash table (and so a HashMap) are best done iteratively, not recursively, since we are manipulating an array.
 
-**_The Map Interface
+**_The Map Interface_**
 
 As before, the code templates below contains two top level interfaces: Map, and HashMap. The Map interface is exactly the one we used in Assignment 2 (TreeMap). The difference here in Assignment 3 is that we are implementing the Map ADT using a hash table (rather than a BST). Since the Map interface is unchanged over Assignment 2, the functions are defined (as before) without reference to a hash table, an array, or any other implementation structure.
 
-**_Using a Hash Table to build a Map
+**_Using a Hash Table to build a Map_**
 
 As noted, we will use a hash table to provide the various behavior characteristics of a Map ADT, including the requirement that keys stored are unique. We will see that a hash table gives us O(1) expected times for access operations (for put, get, hasKey); this speed comes at a cost in other areas... specifically you cannot do one of the things a TreeMap allows -- getting keys out in sorted order. Our HashMap will not give us sorted keys without doing an actual sorts (and bearing that cost). We still will provide a method to get all the keys, but the specs say the order of those keys in the returned array is "unspecified", meaning unpredictable (or "random" in the popular vernacular).
 
-**_The HashMap Interface
+**_The HashMap Interface_**
 
 The HashMap interface extends the Map interface and adds a few operations that are possible because the implementation method is a hash table. These include minKey, maxKey, and getKeys (in unspecified order). They also include operations reelated to the table itself: lambda (the ratio of elements stored to array slots); extend (double the size of the table array and rehash all the keys stored); and of course, hash (public access to the hash function itself).
 
 # Implementation Notes
 Remember that just because the Oracle gives you 100%, you are not guaranteed any specific grade on the assignment. Testing your programs thoroughly is your responsibility; try to think of all the many edge cases and extremes for the data values possible. Think of degenerate structures, small structures, large ones... The main goal of the Oracle is to provide some direction. However, it is not the end-all be-all determiner of correctness. Please do not use this tool as a crutch.
 
-**_TIPS:
+**_TIPS:_**
 
     Extend:
     Use normal, built-in, fixed length Java arrays for this implementation.
