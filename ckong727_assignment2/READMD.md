@@ -12,11 +12,11 @@ In our program, we will have one object (class) as "the TreeMap". We will call t
 
 Keep in mind that many of your methods in TreeMap are similar to BST operations, but are not directly the same... due to the extra MAP behavior and structure mixed in.
 
-**_The Map Interface
+**_The Map Interface_**
 
 To be as abstract as we can, your code templates below contains two top level interfaces: Map, and TreeMap. The Map interface contains operations that are common to a Map implementation whether it is done via BST or Hash table (or LIST... or any other method). These methods are the put, get, remove, hasKey, and size operations. The put and remove operations are basic data add and delete functions; get is finding data in the structure, specifically giving a key and retrieving the associated value; hasKey tells if a key is already mapped to some value in the Map; size tells how many (key,value) pairs are in the Map. These functions are defined without reference to BST (or any other implementation structure).
 
-**_Using a Tree to build a Map
+**_Using a Tree to build a Map_**
 
 We ultimately are implementing a MAP behavior and we are using a BST to provide it. A MAP stores (key,value) pairs, and any specific key can be in the MAP at most once. Said another way, the keys in a MAP must be unique.
 
@@ -26,14 +26,14 @@ A BST is another option... and we will use a BST in this assignment. Using a BST
 
 In this assignment, the basic idea is to build a BST using the keys (strings here) as data elements for determining cell placement in the tree. Comparing string for "greater than" and "lesser than" will mean using alphabetic order (or dictionary order). The tree cells will also contain a field for the Value object of a (key,value) pair. When you put a (key,value) pair into the MAP, you first add a cell to the BST using the key, and once it is added you put the value object into the tree cell containing the key. See the interface behavior for details. Note that sometimes put does not make a new cell, but alters one already in the tree; this is part of why we said the TreeMap code is not directly BST code.
 
-**_The TreeMap Interface
+**_The TreeMap Interface_**
 
 The TreeMap interface extends the Map interface and adds a few operations that are possible because the implementation method will be a BST. These include minKey, maxKey, and getKeys (in sorted order). Note that these are possible with a Hash implementation, but they are not efficient. With a BST we can get this information with O(log N) algorithms (as we studied in class).
 
 # Implementation Notes
  Remember that just because the Oracle gives you 100%, you are not guaranteed any specific grade on the assignment. Testing your programs thoroughly is your responsibility; try to think of all the many edge cases and extremes for the data values possible. Think of degenerate structures, small structures, large ones... The main goal of the Oracle is to provide some direction. However, it is not the end-all be-all determiner of correctness. Please do not use this tool as a crutch.
 
-##_TIPS:
+**_TIPS:_**
 
     Don't forget: you must write recursive functions as directed in the Map and TreeMap interface definitions. You may write other recursive functions, but you must at least do the ones shown. The "height" function is given to you as an example, using the pattern that is used in your text with the BST code. To become accustomed to doing the methods recursively, start with the ones that do NOT change the tree structure... like get, hasKey, maxKey, minKey. Operations put and remove change the tree structure. Of these, put is easier, as all it does is extend the tree with a new cell (possibly) at the leaf level. The remove operation is the most complex. Do it last when you are practiced at recursion.
 
